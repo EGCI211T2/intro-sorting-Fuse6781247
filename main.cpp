@@ -6,41 +6,35 @@
 //
 
 #include <iostream>
-#include <vector>
-#include <cstdlib>
 using namespace std;
 #include "sorting.h"
 
 int main(int argc, char * argv[]) {
     
-    cout<<"argc is "<<argc<<endl;
-    vector<int> vals;
+ 
+  cout<<"argc is "<<argc<<endl;
+    int i,N;
+    int *a;
+    for(i=1;i<argc;i++){
+      
+      
+      a = new int[N];
 
-    for(int i = 1; i < argc; i++){
-        const char *s = argv[i];
-        char *endptr = nullptr;
-        long v = strtol(s, &endptr, 10);
-        if(endptr != s && *endptr == '\0'){
-            vals.push_back((int)v);
-        }
+      cout<<"argv[" << i<<"]" <<argv[i]<<endl;
+
+      for(i=1; i<argc; i++){
+        a[i-1] = atoi(argv[i]);
+      }
     }
-
-    int N = (int)vals.size();
-    if(N <= 0){
-        cout << "Please provide numbers as arguments" << endl;
-        return 1;
-    }
-
-    int *a = new int[N];
-    for(int i = 0; i < N; ++i) a[i] = vals[i];
-
-    cout << "Before sorting: ";
-    display(a, N);
-
-    sort(a, N);
-    cout << "After sorting: ";
-    display(a, N);
-
+    /* Convert to numbers*/
+    N=argc-1;
+    cout<<"Before sorting:";
+    display(a,N);
+    
+    sort(a,N);
+    cout<<"After sorting:";
+    display(a,N);
+    
     delete [] a;
     
     return 0;
