@@ -20,14 +20,13 @@ void sort(int *a, int N){
         for(j = 0; j < N-1-i; j++){
             if(a[j] > a[j+1]){
                 swap(a[j], a[j+1]);
-                display(a, N);
             }
         }
     }
 }
 void display (int *a, int N){
     for(int i =0; i<N; i++){
-        cout << setw(5) << a[i];
+        cout << a[i] << " ";
     }
     cout <<endl;
 }
