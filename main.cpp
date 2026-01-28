@@ -11,29 +11,31 @@ using namespace std;
 
 int main(int argc, char * argv[]) {
     
- 
-  cout<<"argc is "<<argc<<endl;
-    int i,N;
+    cout<<"argc is "<<argc<<endl;
+    int i, N;
     int *a;
-    for(i=1;i<argc;i++){
-      
-      
-      a = new int[N];
-
-      cout<<"argv[" << i<<"]" <<argv[i]<<endl;
-
-      for(i=1; i<argc; i++){
-        a[i-1] = atoi(argv[i]);
-      }
-    }
-    /* Convert to numbers*/
-    N=argc-1;
-    cout<<"Before sorting:";
-    display(a,N);
     
-    sort(a,N);
-    cout<<"After sorting:";
-    display(a,N);
+    /* Convert to numbers*/
+    N = argc - 1;
+    
+    if(N <= 0) {
+        cout << "Please provide numbers as arguments" << endl;
+        return 1;
+    }
+    
+    a = new int[N];
+    
+    for(i = 1; i < argc; i++){
+        cout << "argv[" << i << "] = " << argv[i] << endl;
+        a[i-1] = atoi(argv[i]);
+    }
+    
+    cout << "Before sorting: ";
+    display(a, N);
+    
+    sort(a, N);
+    cout << "After sorting: ";
+    display(a, N);
     
     delete [] a;
     
