@@ -7,6 +7,7 @@
 
 #include <iostream>
 using namespace std;
+#include "sorting.h"
 
 int main(int argc, char * argv[]) {
     
@@ -15,8 +16,15 @@ int main(int argc, char * argv[]) {
     int i,N;
     int *a;
     for(i=1;i<argc;i++){
-        cout<<"argv[" << i<<"]" <<argv[i]<<endl;
       
+      
+      a = new int[N];
+
+      cout<<"argv[" << i<<"]" <<argv[i]<<endl;
+
+      for(i=1; i<argc; i++){
+        a[i-1] = atoi(argv[i]);
+      }
     }
     /* Convert to numbers*/
     N=argc-1;
@@ -27,6 +35,7 @@ int main(int argc, char * argv[]) {
     cout<<"After sorting:";
     display(a,N);
     
+    delete [] a;
     
     return 0;
 }
