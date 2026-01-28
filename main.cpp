@@ -33,14 +33,15 @@ int main(int argc, char * argv[]) {
     a = new int [N];
     cout<<"Enter numbers"<<endl;
     for(i=0; i < N; i++){
-        cin>> a[i];
+        
+      cin>> a[i];
       }
   }
     /* Convert to numbers*/
     cout<<"Before sorting:";
     display(a,N);
     
-    sort(a,N);
+    bubblesort(a,N);
     cout<<"After sorting:";
     display(a,N);
     
