@@ -20,7 +20,6 @@ void sort(int *a, int N){
         for(j = 0; j < N-1-i; j++){
             if(a[j] > a[j+1]){
                 swap(a[j], a[j+1]);
-                cout << ": ";
                 display(a, N);
             }
         }
